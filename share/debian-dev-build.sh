@@ -65,13 +65,13 @@ else
   mv -v ./dist/${NAME}*.tar.gz ${DIR}/${NAME}_${VERSION}.orig.tar.gz
 fi
 cd ${DIR}
-git clone https://github.com/Linaro/pkg-${NAME}.git
+git clone https://github.com/kernelci/pkg-${NAME}.git
 tar -xzf ${NAME}_${VERSION}.orig.tar.gz
 if [ ! -d ${DIR}/${NAME}-${VERSION} ]; then
   mv -v ${DIR}/${NAME}-* ${DIR}/${NAME}-${VERSION}
 fi
 cd ${DIR}/pkg-${NAME}/
-git checkout ${BRANCH}
+git checkout 2017.6
 dpkg-checkbuilddeps
 git archive ${BRANCH} debian | tar -x -C ../${NAME}-${VERSION}
 cd ${DIR}/${NAME}-${VERSION}
