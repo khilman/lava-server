@@ -71,7 +71,7 @@ if [ ! -d ${DIR}/${NAME}-${VERSION} ]; then
   mv -v ${DIR}/${NAME}-* ${DIR}/${NAME}-${VERSION}
 fi
 cd ${DIR}/pkg-${NAME}/
-git checkout 2017.7
+git checkout 2017.7-1
 dpkg-checkbuilddeps
 git archive ${BRANCH} debian | tar -x -C ../${NAME}-${VERSION}
 cd ${DIR}/${NAME}-${VERSION}
